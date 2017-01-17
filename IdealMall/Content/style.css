@@ -1,0 +1,2296 @@
+/*behavior: url(pie/PIE.htc);*/
+input[type=submit], input[type=button]
+{
+    border: 1px solid #ccc;
+    background: #666 color:#333;
+    padding: 5px;
+    cursor: pointer;
+}
+
+input[type=text], input[type=password]
+{
+    padding: 5px;
+    width: 346px;
+    border: 1px solid #ccc;
+}
+
+    input[type=text]:focus, input[type=password]:focus
+    {
+        outline: 1px solid #666;
+    }
+
+textarea
+{
+    border: 1px solid #ccc;
+}
+
+select
+{
+    padding: 5px;
+}
+
+
+p
+{
+    text-align: center;
+    padding: 0px 0px 0px 10px;
+    line-height: 20px;
+}
+
+.pagewidth
+{
+    margin: 0 15px;
+}
+
+.pagewidthArticle
+{
+    margin: 0 auto;
+    width: 1235px;
+}
+
+.pagewidthinner
+{
+    width: 1024px;
+    margin: 0 auto;
+}
+.section
+{
+    margin-top:15px;
+}
+.tagname
+{
+    /*background: #eee;
+    margin-bottom: 15px;
+    
+    height:70px;
+    border: 1px solid #ccc;
+        */
+    margin-top: 15px;
+}
+
+    .tagname p
+    {
+        color: #ce0b10;
+        font-weight: bold;
+        font-size: 24px;
+        text-align: center;
+        padding-top: 15px;
+    }
+
+.floatleft
+{
+    float: left;
+}
+
+.floatright
+{
+    float: right;
+}
+
+.marginRnone
+{
+    margin-right: 0px !important;
+}
+/*******select skin css starts**********/
+.select
+{
+    position: absolute;
+    /*width: 158px;  With the padding included, the width is 190 pixels: the actual width of the image. */
+    height: 28px;
+    padding: 0;
+    color: #000;
+    font: 12px/28px arial, sans-serif;
+    background: url("../../images/title_bar_leftc.gif") no-repeat scroll 0 0 transparent;
+    overflow: hidden;
+}
+
+    .select .class1
+    {
+        background: url("../../images/optionbar_rightc.gif") no-repeat scroll right top transparent;
+        height: 28px;
+    }
+
+        .select .class1 .class2
+        {
+            background: url("../../images/title_bar_bg.gif") repeat-x scroll left top transparent;
+            height: 28px;
+            margin: 0 26px 0 8px;
+            color: #000;
+        }
+
+.radiusselect .select
+{
+    position: absolute;
+    /*width: 158px;  With the padding included, the width is 190 pixels: the actual width of the image. */
+    height: 34px;
+    padding: 0;
+    color: #000;
+    font: 14px/28px arial, sans-serif;
+    background: url("../../images/title_bar_leftc_big.png") no-repeat scroll 0 0 transparent;
+    overflow: hidden;
+}
+
+    .radiusselect .select .class1
+    {
+        background: url("../../images/optionbar_rightc-big.png") no-repeat scroll right top transparent;
+        height: 34px;
+    }
+
+        .radiusselect .select .class1 .class2
+        {
+            background: url("../../images/title_bar_bg_big.jpg") repeat-x scroll left top transparent;
+            height: 34px;
+            margin: 0 34px 0 8px;
+            color: #000;
+            padding-top: 4px;
+        }
+/*******select skin css ends**********/
+
+/*******Header css**********/
+.headerbg
+{
+    background: #ce0b10;
+    width: 100%;
+    height: 70px;
+    padding-top: 15px;
+}
+
+.logo a
+{
+    background: url('../../images/logo.png') no-repeat;
+    width: 225px;
+    height: 44px;
+    display: block;
+    float: left;
+    margin-top: 7px;
+}
+
+    .logo a span
+    {
+        display: none;
+    }
+
+.submenu
+{
+    float: right;
+    margin-top: 25px;
+}
+
+    .submenu a
+    {
+        margin-right: 5px;
+        color: #fff;
+        font-size: 14px;
+    }
+
+        .submenu a:hover
+        {
+            text-decoration: underline;
+        }
+
+    .submenu span
+    {
+        margin-right: 5px;
+        color: #fff;
+    }
+
+.usersubmenu
+{
+    float: right;
+    margin-top: 5px;
+}
+
+    .usersubmenu a
+    {
+        margin-right: 5px;
+        color: #fff;
+        font-size: 14px;
+    }
+
+        .usersubmenu a:hover
+        {
+            text-decoration: underline;
+        }
+
+    .usersubmenu span
+    {
+        margin-right: 5px;
+        color: #fff;
+    }
+
+    .usersubmenu .welcomename
+    {
+        color: #fff;
+    }
+
+.submenubtm
+{
+    display: inline-block;
+    float: right;
+    margin-top: 20px;
+}
+
+.submenuup
+{
+    height: 23px;
+}
+
+.tweets
+{
+    background: url('../../images/sprite.png') no-repeat scroll -80px -56px;
+    display: block;
+    width: 80px;
+    height: 20px;
+}
+
+.fblikes
+{
+    background: url('../../images/sprite.png') no-repeat scroll -172px -54px;
+    display: block;
+    width: 44px;
+    height: 22px;
+}
+
+.fbshare
+{
+    background: url('../../images/sprite.png') no-repeat scroll -229px -57px;
+    display: block;
+    width: 80px;
+    height: 20px;
+}
+/*******Header css ends****/
+
+/********Search css starts******/
+.searchbg
+{
+    background: #ce0b10;
+    width: 640px;
+    height: 70px;
+    padding: 15px;
+    margin: 0 auto;
+    margin-bottom: 60px;
+    border-radius: 5px;
+    behavior: url(pie/PIE.htc);
+}
+
+.searchh1
+{
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+    .searchh1 h1
+    {
+        font-size: 46px;
+        text-align: center;
+        font-style: normal;
+        font-weight: normal;
+    }
+
+.searchlabel
+{
+    display: inline-block;
+}
+
+    .searchlabel label
+    {
+        font-size: 20px;
+        color: #fff;
+        display: block;
+        float: left;
+        height: 32px;
+        margin-right: 88px;
+    }
+
+.textbox
+{
+    float: left;
+    margin-right: 15px;
+    padding: 5px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+    .textbox input[type="text"]
+    {
+        display: block;
+        color: #3e454d;
+        font-size: 14px;
+        border: none;
+        width: 190px;
+        padding: 2px;
+    }
+
+    .textbox span input:focus
+    {
+        outline: none;
+        border: none;
+        resize: none;
+    }
+
+.radiusselect
+{
+    float: left;
+    margin-right: 15px;
+}
+
+    .radiusselect select
+    {
+        padding: 7px;
+        width: 90px;
+        font-size: 14px;
+    }
+/*.FLD span {
+	background: url("../../images/lft_btn.png") no-repeat 0% -40px;
+	margin: 0;
+	padding: 0 0 0 12px;
+	text-decoration: none;
+	line-height: normal;
+}*/
+.FLD input
+{
+    display: block;
+    background: #85868a url("../../images/blackbg.png") repeat-x 100% -40px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    height: 34px;
+    padding: 5px 44px;
+    border: 1px solid #2b2c2f;
+}
+
+    .FLD input:active, .FLD input:focus
+    {
+        outline: none;
+        border: none;
+        resize: none;
+    }
+    /* Commented Backslash Hack hides rule from IE5-Mac \*/
+    /*.FLD span input {float:none;}*/
+    /* End IE5-Mac hack */
+
+    .FLD input:hover
+    {
+        background-position: left 1px;
+    }
+
+/*******Search css ends********/
+
+/*****Scroller*****/
+.scrollerbg
+{
+    background: #d1d1d1;
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+.slider-container
+{
+    width: 1024px;
+    padding: 20px 0;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    position: relative;
+    margin: 0 auto;
+    top: 0px;
+    left: 0px;
+    width: 980px;
+    height: 78px;
+    overflow: hidden;
+    visibility: hidden;
+    margin-top: 20px;
+}
+
+.slider-box
+{
+    cursor: move;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 980px;
+    height: 100px;
+    overflow: hidden;
+}
+
+    .slider-box a
+    {
+        cursor: move;
+    }
+/*****Scroller ends*****/
+
+/***********middle section css starts**************/
+.middlesection
+{
+    margin-bottom: 60px;
+}
+
+.signindiv
+{
+    float: left;
+    width: 350px;
+    margin-right: 60px;
+    margin-top: 60px;
+    font-size: 14px;
+}
+
+.signinicon
+{
+    background: url("../../images/sprite.png") scroll 0px -49px;
+    width: 73px;
+    height: 73px;
+    float: left;
+    margin-right: 10px;
+}
+
+.signintext a
+{
+    color: #01a2d9;
+}
+
+    .signintext a:hover
+    {
+        text-decoration: underline;
+    }
+
+.signintext p
+{
+    margin-bottom: 3px;
+}
+
+.signintext h2
+{
+    margin-bottom: 10px;
+}
+
+.appdiv
+{
+    float: left;
+    width: 170px;
+    margin-right: 110px;
+}
+
+.mobileimage
+{
+    background: url("../../images/mobileappimg.png") no-repeat;
+    width: 77px;
+    height: 150px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+.mobileapp a
+{
+    float: left;
+    background: #ce0b10;
+    border-radius: 5px;
+    color: #ffffff;
+    padding: 10px 38px;
+    text-decoration: none;
+    line-height: normal;
+    box-shadow: 1px 1px 1px #888888;
+    behavior: url(pie/PIE.htc);
+}
+
+.socialicons
+{
+    float: left;
+    margin-top: 85px;
+}
+
+    .socialicons .label, .socialicons .facebook, .socialicons .twitter, .socialicons .googleplus, .socialicons .youtube
+    {
+        float: left;
+        display: block;
+    }
+
+    .socialicons .label
+    {
+        margin-top: 20px;
+        margin-right: 16px;
+        font-size: 14px;
+    }
+
+    .socialicons .facebook
+    {
+        background: url("../../images/sprite.png") scroll 0px 0px;
+        width: 48px;
+        height: 48px;
+        margin-right: 10px;
+    }
+
+    .socialicons .twitter
+    {
+        background: url("../../images/sprite.png") scroll -63px 0px;
+        width: 48px;
+        height: 48px;
+        margin-right: 10px;
+    }
+
+    .socialicons .googleplus
+    {
+        background: url("../../images/sprite.png") scroll -125px 0px;
+        width: 48px;
+        height: 48px;
+        margin-right: 10px;
+    }
+
+    .socialicons .youtube
+    {
+        background: url("../../images/sprite.png") scroll -188px 0px;
+        width: 48px;
+        height: 48px;
+        margin-right: 10px;
+    }
+/***********middle section css ends**************/
+
+/*************footer css starts****************/
+.copyright .socialicons
+{
+    margin-top: 20px;
+    background: #fff;
+    border-radius: 5px;
+    behavior: url(pie/PIE.htc);
+    padding: 10px;
+}
+
+    .copyright .socialicons .label
+    {
+        color: #3e454d;
+    }
+
+    .copyright .socialicons a
+    {
+        margin-right: 0;
+        margin-left: 10px;
+    }
+
+.footerbg {
+background: #45484d; /* Old browsers */
+background: -moz-linear-gradient(top,  #45484d 0%, #000000 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #45484d 0%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #45484d 0%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+	border-top: 10px solid #313840;
+	width: 100%;
+	color: #fff;
+	padding: 10px 0;
+}
+.footerlogo
+{
+    background: url('../../images/footerlogo.png') no-repeat;
+    width: 210px;
+    height: 41px;
+    display: block;
+    float: left;
+}
+
+.powered
+{
+    margin-bottom: 10px;
+}
+
+.linestr
+{
+    width: 1px;
+    float: left;
+    background: #5f6976;
+    height: 100px;
+}
+
+.copyright
+{
+    float: left;
+    width: 500px;
+    margin-top: 18px;
+}
+
+.footermenus
+{
+    width: 260px;
+    float: left;
+}
+
+.copyright a, .copyright span
+{
+    margin-right: 5px;
+}
+
+.footermenus a, .copyright a
+{
+    color: #fff;
+}
+
+    .footermenus a:hover, .copyright a:hover
+    {
+        text-decoration: underline;
+    }
+
+.tradelogin
+{
+    background: #ce0b10;
+    border: 1px solid #fff;
+    padding: 0px 5px;
+    display: block;
+    width: 130px;
+    margin-bottom: 4px;
+}
+
+.publiclogin
+{
+    background: #ce0b10;
+    border: 1px solid #fff;
+    padding: 0px 5px;
+    display: block;
+    width: 75px;
+    margin-bottom: 4px;
+}
+
+.footermenus .tradelogin:hover
+{
+    text-decoration: none;
+}
+/*************footer css ends****************/
+
+/*********UserPage Css Starts***********/
+
+/********User page Search starts css******/
+.userpagesearchbg
+{
+    background: #dddddd;
+    width: 100%;
+    height: 35px;
+    padding: 15px 0;
+}
+
+    .userpagesearchbg .controls
+    {
+        width: 550px;
+        float: left;
+    }
+
+    .userpagesearchbg .FLD span input
+    {
+        height: 33px;
+        padding: 5px 44px;
+    }
+
+.postcodedts
+{
+    width: 202px;
+    float: left;
+    margin-right: 40px;
+}
+
+.posticons
+{
+    background: url('../../images/sprite.png') no-repeat scroll -241px -1px;
+    width: 31px;
+    height: 30px;
+    float: left;
+}
+
+.postcodedts p
+{
+    margin-top: 10px;
+    margin-left: 28px;
+}
+
+.postcodedts #postcode
+{
+    font-weight: bold;
+}
+
+.changeLocation
+{
+    float: right;
+}
+
+    .changeLocation a
+    {
+        background: #6eb9ea url("../../images/changelocbg.png") repeat-x 0% -40px;
+        margin: 0;
+        padding: 8px 30px;
+        border-radius: 8px;
+        font-size: 14px;
+        behavior: url(pie/PIE.htc);
+        text-decoration: none;
+        line-height: normal;
+        color: #fff;
+        display: block;
+        cursor: pointer;
+        height: 15px;
+        border: 1px solid #225ca5;
+    }
+
+        /* Commented Backslash Hack hides rule from IE5-Mac \*/
+        /*.FLD span input {float:none;}*/
+        /* End IE5-Mac hack */
+
+        .changeLocation a:hover
+        {
+            background-position: left 1px;
+        }
+/*
+    .changeLocation a span {
+	float: left;
+	display: block;
+	background: url("../../images/blue_rgt_btn_app.png") no-repeat 100% -40px;
+	padding: 9px 25px 9px 15px;
+	color: #fff;
+	font-size: 14px;
+	border: none;
+}
+     .changeLocation a:hover span {
+	color: #FFF;
+}
+.changeLocation a:hover span {
+	background-position: right top;
+}*/
+/********User page Search ends css******/
+/**********Left nav css starts*********/
+.leftnav
+{
+    width: 15%;
+    float: left;
+    background: #fff;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+    .leftnav h1
+    {
+        background: #ce0b10;
+        padding: 10px;
+        font-size: 16px;
+        color: #fff;
+        border: 1px solid #c23a2c;
+    }
+
+    .leftnav a
+    {
+        display: block;
+        padding: 10px 15px 10px 10px;
+        border-bottom: 1px solid #ddd;
+        position: relative;
+        word-wrap: break-word;
+    }
+
+        .leftnav a:hover, .leftnav a.active
+        {
+            background: #ddd;
+        }
+
+    .leftnav ul
+    {
+        border: 1px solid #ddd;
+        border-bottom: none;
+    }
+        .leftnav ul.secondul
+        {
+            border-top: none;
+        }
+        .leftnav ul ul
+        {
+            display: none;
+        }
+
+    .leftnav li
+    {
+        position: relative;
+    }
+
+        .leftnav li:hover ul
+        {
+            display: block;
+            position: absolute;
+            left: 100%;
+            top: 0px;
+            width: 200px;
+            background: #fff;
+            z-index: 1000;
+        }
+
+.arrow
+{
+    background: url(../../images/sprite.png) no-repeat scroll -279px -4px;
+    width: 9px;
+    height: 9px;
+    position: absolute;
+    right: 5px;
+    top: 12px;
+    display: block;
+}
+/**********Left nav css ends*********/
+
+/***********Article Css starts**********/
+.article .controls
+{
+    background: #ce0b10;
+    padding: 5px;
+    width: 395px;
+    margin: 0 auto;
+}
+
+    .article .controls input[type=submit]
+    {
+        color: #fff;
+        background: #ce0b10;
+        border: none;
+        padding: 6px 14px;
+    }
+
+.tradeproduct
+{
+    width: 435px;
+    margin: 0 auto;
+    padding: 20px 0 0 0;
+    margin-top: 25px;
+}
+#tradebody .tradeproduct
+{
+        border-right: 2px solid #c23a2c;
+        vertical-align:top;
+}
+.tradetable
+{
+    margin-top:20px;
+}
+.tradename
+{
+    padding: 10px;
+    border-bottom: 2px solid #c23a2c;
+    text-align:center;
+    font-size:22px;
+    color:#c23a2c;
+}
+    #tradebody .tradeproduct:last-child
+    {
+        border-right: none;
+    }
+    .tradeproduct a
+    {
+        display: block;
+        float: left;
+            margin-bottom: 40px;
+    margin-left: 10px;
+        text-align: center;
+        border-radius: 10px;
+        behavior: url(pie/PIE.htc);
+            height: 185px;
+    width: 131px;
+    border: 1px solid #ccc;
+    }
+
+        .tradeproduct a span
+        {
+            display: block;
+            float: right;
+            font-family: sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: right;
+            width: 120px;
+            word-wrap: break-word;
+        }
+
+        .tradeproduct a:hover
+        {
+            background: #ddd;
+        }
+
+        .tradeproduct a img
+        {
+                height: 125px;
+        }
+
+
+.tradecompany
+{
+    margin: 25px 20px;
+}
+
+    .tradecompany a
+    {
+        padding: 0px 0px 20px 20px;
+    }
+
+        .tradecompany a img
+        {
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+
+.sponsorlogo
+{
+    text-align: center;
+}
+
+.tradecompany img
+{
+    margin-right: 5px;
+    border: 1px solid #ce0b10;
+    padding: 2px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    behavior: url(pie/PIE.htc);
+}
+
+.article .controls input[type=text]
+{
+    width: 300px;
+}
+
+    .article .controls input[type=text]:focus
+    {
+        outline: none;
+    }
+
+.article
+{
+    width: 67%;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.breadcrum
+{
+    height: 30px;
+    border-bottom: 1px solid #ddd;
+    margin-top: 9px;
+}
+
+    .breadcrum span, .breadcrum a
+    {
+        float: left;
+        margin-right: 5px;
+    }
+
+    .breadcrum a
+    {
+        text-decoration: underline;
+    }
+
+.breadcrumarrow
+{
+    background: url(../../images/sprite.png) no-repeat scroll -279px -4px;
+    width: 9px;
+    height: 9px;
+    display: block;
+    margin-top: 3px;
+}
+
+.filter-result .changeLocation
+{
+    float: left;
+    margin-right: 10px;
+}
+
+.filter-result .posticons
+{
+    margin-right: 10px;
+}
+
+.filterblock
+{
+    margin-top: 15px;
+    height: 30px;
+    margin-bottom: 15px;
+}
+
+#postcode-result
+{
+    font-weight: bold;
+}
+
+.filter-result p
+{
+    line-height: 38px;
+    margin-left: 26px;
+}
+
+.sortbymiles
+{
+    float: right;
+}
+
+    .sortbymiles .ratioselect, .sortbymiles label
+    {
+        float: left;
+    }
+
+    .sortbymiles label
+    {
+        display: block;
+        margin-top: 6px;
+        margin-right: 5px;
+    }
+
+.block
+{
+    width: 100%;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+
+.companyname
+{
+    padding: 6px 0;
+    display: inline-block;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+}
+
+.distance
+{
+    margin-right: 5px;
+    text-align:right;
+}
+
+.companyname .distance span
+{
+    font-weight: bold;
+    color: #3e454d;
+}
+.companyname .distance span.ph-number{
+    margin-top: 5px;
+        display: inline-block;
+    background:url('/img/phone-icon.png') no-repeat;
+    padding:5px 5px 5px 27px;
+}
+
+.campanylogo-address
+{
+    float: left;
+    width: 400px;
+    margin-left: 5px;
+    word-wrap:break-word;
+}
+
+    .campanylogo-address .address
+    {
+        margin-top: 5px;
+    }
+
+.companydetails
+{
+    padding: 5px 7px;
+    display: inline-block;
+    width: 98%;
+}
+
+.companyimage img
+{
+    border: 1px solid #ccc;
+}
+
+.companyimage
+{
+    margin-top: 5px;
+}
+
+.detone
+{
+    margin-bottom: 5px;
+    float: left;
+    font-weight:bold;
+    width:80%;
+}
+
+.offer
+{
+    float: right;
+}
+
+    .offer a
+    {
+        background: #85868a url("../../images/blackbg.png") repeat-x 100% -40px;
+        margin: 0;
+        padding: 8px 30px;
+        border-radius: 8px;
+        text-decoration: none;
+        line-height: normal;
+        color: #fff;
+        font-size: 14px;
+        display: block;
+        height: 15px;
+        border: 1px solid #2b2c2f;
+    }
+
+        /* Commented Backslash Hack hides rule from IE5-Mac \*/
+        /*.FLD span input {float:none;}*/
+        /* End IE5-Mac hack */
+
+        .offer a:hover
+        {
+            background-position: left 1px;
+        }
+
+.viewallcom
+{
+    display: inline-block;
+    margin-bottom: 15px;
+}
+/*
+.offer a:hover span {
+	color: #FFF;
+}
+.offer a span {
+	float: left;
+	display: block;
+	background: url("../../images/green_rgt_btn_app.png") no-repeat 100% -40px;
+	padding: 9px 25px 9px 15px;
+	color: #fff;
+	font-size: 14px;
+	border: none;
+}
+.offer a:hover span {
+	background-position: right top;
+}*/
+.detoffer
+{
+    margin-bottom: 10px;
+}
+
+.services
+{
+       /* margin-top: 42px; */
+    padding: 6px;
+    width: 100%;
+    /* float: left; */
+    margin-left: 180px;
+       height: 115px;
+    display: table-cell;
+    vertical-align: bottom;
+}
+    .services img
+    {
+    width:70px;
+    }
+/***********Article Css ends**********/
+
+/*************advertisement css***************/
+.advertisement
+{
+    background: #eee;
+    height: 140px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    border: 1px solid #ccc;
+    display:none;
+}
+
+    .advertisement:hover, .adrightdiv:hover
+    {
+        background: #ddd;
+    }
+
+    .advertisement p
+    {
+        font-size: 16px;
+        text-align: center;
+        padding-top: 60px;
+    }
+
+.adrightdiv
+{
+    background: #eee;
+    height: 300px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    border: 1px solid #ccc;
+}
+
+    .adrightdiv p
+    {
+        font-size: 16px;
+        text-align: center;
+        padding-top: 136px;
+    }
+/*************advertisement css***************/
+/**********Right nav css starts*********/
+.rightnav
+{
+    width: 15%;
+    float: right;
+    background: #fff;
+    margin-bottom: 15px;
+}
+
+    .rightnav h1
+    {
+        background: #ce0b10;
+        padding: 10px;
+        font-size: 16px;
+        color: #fff;
+        border: 1px solid #c23a2c;
+    }
+
+    .rightnav li
+    {
+        display: block;
+        padding: 5px;
+        border-bottom: 1px solid #ddd;
+        position: relative;
+        word-wrap: break-word;
+        height: 33px;
+    }
+
+        .rightnav li:hover
+        {
+            background: #ddd;
+        }
+
+    .rightnav ul
+    {
+        border: 1px solid #ddd;
+        border-bottom: none;
+    }
+
+        .rightnav ul li a
+        {
+            float: left;
+            margin-right: 28px;
+        }
+
+        .rightnav ul span
+        {
+            float: right;
+            margin-top: 10px;
+        }
+
+#total
+{
+    background: #ccc;
+    display: inline-block;
+    width: 100%;
+}
+
+    #total .text
+    {
+        float: left;
+        font-weight: bold;
+        padding: 7px;
+    }
+
+    #total .sum
+    {
+        float: right;
+        font-weight: bold;
+        padding: 7px;
+    }
+/**********Right nav css ends*********/
+/******************Popup css starts here*******************/
+#companies
+{
+    min-height: 0px;
+    max-height: 500px;
+    overflow: auto;
+}
+
+    #companies .distance p
+    {
+        margin-bottom: 5px;
+    }
+
+    #companies .companyname
+    {
+        width: auto;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+    }
+
+        #companies .companyname.marginnone
+        {
+            margin-bottom: 0;
+        }
+/******************Popup css ends here*******************/
+/*************************Product box css starts******************************/
+/*.product-block {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+}
+
+.productbox
+{
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    -moz-flex: 1;
+    flex: 1;
+}*/
+
+table.product-table
+{
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.productbox
+{
+    /*float: left;*/
+    border-radius: 10px;
+    behavior: url(pie/PIE.htc);
+    margin-right: 15px;
+    border: 1px solid #ce0b10;
+    width: 296px;
+}
+
+.productdetails h2 span
+{
+    color: #ce0b10;
+}
+
+.productbox .companyname
+{
+    width: auto;
+    display: block;
+    background: none;
+}
+    .productbox .companyname img
+    {
+            margin-left: 10px;
+    }
+.companyname span
+{
+    color: #ce0b10;
+    margin-left: 3px;
+    position: relative;
+    top: -1px;
+    font-weight: bold;
+}
+
+.productbox .productdetails img
+{
+    text-align: right;
+    max-width:100%;
+}
+
+.productdetails
+{
+    padding: 10px;
+    display: inline-block;
+}
+.productbox .additional-offer
+{
+height:43px;
+}
+    .productdetails h1
+    {
+        margin-bottom: 5px;
+        font-weight :normal;
+    }
+
+    .productdetails .pro-details h2
+    {
+        text-align: left;
+        font-size: 16px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+        .productdetails .pro-details h2.rmbold
+        {
+            font-weight:normal;
+            color: #000;
+            font-size :14px;
+        }
+    .productdetails h3
+    {
+        font-size: 19px;
+    }
+    .productdetails h3 span
+{
+    color: #ce0b10;
+}
+    .productdetails .pro-details
+    {
+        width: 140px;
+        float: left;
+    }
+
+        .productdetails .pro-details span
+        {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+.pro-image
+{
+   cursor: pointer;
+    width: 125px;
+    height: 144px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    float:left ;
+}
+
+.product-block
+{
+    margin-bottom: 15px;
+}
+
+    .product-block .marginnone
+    {
+        margin-right: 0px;
+    }
+
+.pro-details p
+{
+    margin-bottom: 10px;
+    background: #ce0b10;
+    color: #ffffff;
+    padding: 4px 5px;
+    border-radius: 5px;
+    behavior: url(pie/PIE.htc);
+}
+
+.additional-offer p
+{
+    margin-bottom: 15px;
+    background: #ce0b10;
+    color: #ffffff;
+    padding: 4px 5px;
+    border-radius: 5px;
+    behavior: url(pie/PIE.htc);
+    text-align: center;
+}
+
+.pro-details .input
+{
+    margin-top: 55px;
+}
+
+    .pro-details .input input
+    {
+        width: 50px;
+        height: 10px;
+        border: 1px solid #000;
+        border-radius: 3px;
+    }
+
+    .pro-details .input label
+    {
+        margin-right: 0px;
+        font-size: 12px;
+        display: block;
+        margin-bottom: 3px;
+        font-weight: bold;
+    }
+
+.qty-cart
+{
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+    .qty-cart .input
+    {
+        /*float: left;*/
+       
+    }
+        .qty-cart .input.afix
+        {
+             position: relative;
+    top: 12px;
+        }
+
+        .qty-cart .input input
+        {
+            width: 50px;
+            height: 10px;
+                border: 1px solid #000;
+    border-radius: 3px;
+        }
+
+        .qty-cart .input label
+        {
+            margin-right: 0px;
+            font-size: 12px;
+            display: block;
+            margin-bottom: 3px;
+        }
+
+    .qty-cart .cart
+    {
+        margin-top: 15px;
+    }
+
+        .qty-cart .cart a
+        {
+            color: #ffffff;
+            background: #85868a url("../../images/blackbg.png") repeat-x 100% -40px;
+            padding: 8px 12px;
+            border-radius: 5px;
+            behavior: url(pie/PIE.htc);
+            position: relative;
+            top: 5px;
+            font-size: 13px;
+            text-align: center;
+            width: 106px;
+            border: 1px solid #2b2c2f;
+        }
+
+            .qty-cart .cart a:hover
+            {
+                background-position: left 1px;
+            }
+
+
+
+
+
+        .qty-cart .cart .compare
+        {
+            float: left;
+        }
+
+        .qty-cart .cart .addtocart
+        {
+            float: right;
+        }
+/*************************Product box css ends******************************/
+
+/************Login page Starts**********************/
+.formbox
+{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.loginform, .registerform
+{
+    float: left;
+    width: 40%;
+    background: #f2f2e8;
+    border-radius: 15px;
+    behavior: url(pie/PIE.htc);
+    padding: 20px;
+}
+
+.loginform
+{
+    margin-right: 38px;
+}
+
+.formbox h1
+{
+    margin-bottom: 10px;
+    padding: 0;
+    font-size: 24px;
+}
+
+.formbox p
+{
+    margin-bottom: 10px;
+    padding: 0;
+    font-size: 14px;
+}
+
+.txtbox, .keepme
+{
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+    .txtbox.marginnone
+    {
+        margin: 0;
+    }
+
+    .txtbox input[type="text"], .txtbox input[type="password"]
+    {
+        padding: 10px;
+        font-size: 14px;
+        height: auto;
+        width: 385px;
+        border-radius: 5px;
+        behavior: url(pie/PIE.htc);
+    }
+
+    .txtbox textarea
+    {
+        padding: 10px;
+        font-size: 14px;
+        height: auto;
+        width: 550px;
+        border-radius: 5px;
+        behavior: url(pie/PIE.htc);
+    }
+
+.formbox input:focus
+{
+    outline: none;
+}
+
+.watermark
+{
+    font-size: 14px !important;
+}
+
+.keepme span
+{
+    display: block;
+    margin-left: 25px;
+}
+
+.facebooklogin
+{
+    background: url('../../images/facebook-login.png') no-repeat;
+    width: 205px;
+    height: 39px;
+    display: block;
+    float: left;
+}
+
+    .facebooklogin span
+    {
+        display: none;
+    }
+
+.sbmtbtn .submitbtn
+{
+    background: #ce0b10;
+    border-radius: 5px;
+    behavior: url(pie/PIE.htc);
+    padding: 8px 67px;
+    color: #ffffff;
+    font-size: 16px;
+    float: right;
+}
+
+.sbmtbtn .aligncenter
+{
+    margin-right: 100px;
+}
+
+.forgotpwd
+{
+    text-align: center;
+    margin-top: 10px;
+}
+
+    .forgotpwd a
+    {
+        color: red;
+        text-decoration: underline;
+    }
+
+        .forgotpwd a:hover
+        {
+            text-decoration: underline;
+        }
+
+.ortxt
+{
+    float: left;
+    margin-right: 38px;
+    font-size: 32px;
+    margin-top: 130px;
+}
+/************Login page Ends**********************/
+/***********Forgoten password starts****************/
+.forgotpwdbox
+{
+    background: #f2f2e8;
+    border-radius: 15px;
+    behavior: url(pie/PIE.htc);
+    padding: 20px;
+    margin-bottom: 180px;
+}
+
+.sbmtbtn .sendmail
+{
+    background: #ce0b10;
+    border-radius: 5px;
+    behavior: url(pie/PIE.htc);
+    padding: 9px 67px;
+    color: #ffffff;
+    font-size: 16px;
+    float: left;
+}
+/***********Forgoten password ends****************/
+
+/********Trade Login css starts***************/
+.shoppingimg
+{
+    float: left;
+    width: 600px;
+    margin-top: 35px;
+}
+
+    .shoppingimg img
+    {
+        max-width: 65%;
+    }
+
+.tradelogincntrn
+{
+    width: 391px;
+    float: left;
+}
+
+    .tradelogincntrn .loginform, .tradelogincntrn .registerform
+    {
+        width: auto;
+    }
+
+    .tradelogincntrn .txtbox input
+    {
+        width: 330px;
+    }
+
+    .tradelogincntrn .sbmtbtn .submitbtn
+    {
+        float: none;
+        padding: 10px 74px;
+    }
+
+    .tradelogincntrn .sbmtbtn
+    {
+        text-align: center;
+    }
+
+    .tradelogincntrn .facebooklogin
+    {
+        margin-left: 58px;
+        margin-bottom: 15px;
+        float: none;
+    }
+/********Trade Login css ends***************/
+
+/*****MyShopping List newly added*****/
+.shoptitle
+{
+    text-align: center;
+    margin-top: 24px;
+    color: #ce0b10;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.myshoppinglist
+{
+    margin: 0 auto;
+}
+
+.tradeshopall
+{
+    text-align: center;
+}
+
+.myshoppinglist table
+{
+    margin-bottom: 15px;
+}
+
+.myshoppinglist td, .myshoppinglist th
+{
+    border: 1px solid #ce0b10;
+    padding: 5px;
+    text-align: left;
+}
+
+.myshoppinglist th
+{
+    background: #ce0b10;
+    color: #fff;
+}
+
+.myshoppinglist tr:nth-child(2n+1)
+{
+    background: #ffeeef;
+}
+
+.myshoppinglist tr.totaltr, .myshoppinglist tr.headingrow, .myshoppinglist tr.headingrow th
+{
+    background: none;
+}
+
+.myshoppinglist tr .totalval, .myshoppinglist tr .totaltxt
+{
+    background: #ce0b10;
+    color: #fff;
+    font-weight: bold;
+    border: 1px solid #ffb1b6;
+}
+
+.myshoppinglist tr .grandtot
+{
+    text-align: right;
+    width: 85%;
+    font-weight: bold;
+    border: none;
+}
+
+.myshoppinglist tr .grandtotalval
+{
+    background: #ce0b10;
+    color: #fff;
+    font-weight: bold;
+    border: 1px solid #ce0b10;
+}
+
+.myshoppinglist tr.headingrow th
+{
+    color: #333;
+}
+
+    .myshoppinglist tr.headingrow th span
+    {
+        position: relative;
+        bottom: 7px;
+        font-size: 17px;
+    }
+
+.printmail
+{
+    width: 100%;
+    display: inline-block;
+}
+
+    .printmail a
+    {
+        float: right;
+        margin-left: 10px;
+        margin-bottom: 8px;
+    }
+
+        .printmail a span
+        {
+            position: relative;
+            bottom: 7px;
+            margin-left: 5px;
+        }
+
+.clearshoplist
+{
+    width: 100%;
+    display: inline-block;
+}
+
+    .clearshoplist a
+    {
+        background: #ce0b10;
+        border-radius: 5px;
+        behavior: url(pie/PIE.htc);
+        padding: 9px 20px;
+        color: #ffffff;
+        font-size: 13px;
+        float: right;
+        font-weight: bold;
+    }
+
+.changepassword
+{
+    background: #f2f2e8;
+    border-radius: 15px;
+    behavior: url(pie/PIE.htc);
+    padding: 20px;
+    display: inline-block;
+    margin-left: 300px;
+    margin-bottom: 50px;
+}
+
+/* BackTo Top*/
+
+#back-to-top
+{
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 9999;
+    padding: 7px 17px 12px;
+    text-align: center;
+    line-height: 30px;
+    background: #ce0b10;
+    color: #fff;
+    cursor: pointer;
+    border: 0;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: opacity 0.2s ease-out;
+    opacity: 0;
+    font-size: 25px;
+    display: none;
+}
+
+    #back-to-top:hover
+    {
+        background: #ff3d42;
+    }
+
+    #back-to-top.show
+    {
+        opacity: 1;
+        display: block;
+    }
+
+.boxissuefix
+{
+    display: inline-block;
+}
+
+/******Contact US****/
+.contactus
+{
+    float: left;
+    width: 40%;
+    border-radius: 15px;
+    behavior: url(pie/PIE.htc);
+    padding: 20px;
+}
+
+.continfoimg img
+{
+    max-width: 323px;
+}
+
+.continfoimg
+{
+    width: 530px;
+    text-align: right;
+    position: relative;
+    float: right;
+}
+
+    .continfoimg span, .continfoimg div
+    {
+        position: absolute;
+        left: 0;
+    }
+
+        .continfoimg span.text
+        {
+            margin-top: 40px;
+            font-weight: bold;
+        }
+
+    .continfoimg .mail
+    {
+        margin-top: 65px;
+    }
+
+        .continfoimg .mail a
+        {
+            color: #ce0b10;
+            text-decoration: underline;
+        }
+
+.formbox .contactus h1
+{
+    margin-bottom: 10px;
+}
+
+.formbox .contactus h2
+{
+    margin-bottom: 30px;
+}
+
+#searchresult
+{
+    display: inline-block;
+    position: relative;
+}
+p.loginbox-p{
+    margin-bottom: 5px;
+}
+p.loginbox-p a{
+    background: #ce0b10;
+    text-decoration: none;
+    padding: 2px 3px;
+    border: 1px solid #fff;
+}
+.productdetails .pro-details h2 span
+{
+        display: inline;
+}
+.productdetails .pro-details h2 span.line-through {
+    color: #000;
+    font-size :14px;
+}
+#loading
+{
+    position:fixed !important;
+    width:85px;
+    height:85px;
+    top:50%;
+    left:50%;
+    margin-left:-42px;
+    margin-top:-42px;
+}
+#spnvolume
+{
+    display:inline;
+}
+#spnvolume1
+{
+    display:inline ;
+}
+#spnvolume2
+{
+    display:inline-block;
+}
+
+.blink_me {
+  animation: blinker 2s linear infinite;
+     margin-top: 1px;
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 70px;
+}
+
+@keyframes blinker { 
+  1% {color:blue;}
+    25%
+    {
+        color:blue;
+    }
+    50%
+    {
+        color:red;
+    }
+  100% {color:red;}
+}
+
+.pro-info {
+    display:block;
+    width:100%;
+    margin-bottom:3px;
+    margin-left: 0;
+    font-size:17px;
+  animation: blinkers 2s linear infinite;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+@keyframes blinkers { 
+  1% {color:blue;}
+    25%
+    {
+        color:blue;
+    }
+    50%
+    {
+        color:#0fc706;
+    }
+  100% {color:#0fc706;}
+}
+.pro-red-info {
+    display:block;
+    color:red;
+    width:100%;
+        margin-top: 5px;
+    font-size:13px;
+    font-style: italic;
+        font-weight: bold;
+}
+.timinghours img
+{
+height:120px;
+}
+.companytd
+{
+width:175px;
+}
+.campanylogo-address img
+{
+    float:left;
+}
+
+.pricecomparison .qty-cart
+{
+    margin-bottom: 5px;
+}
+    .pricecomparison .qty-cart .cart
+    {
+        margin: 7px auto 0;
+        width: 78px;
+    }
+        .pricecomparison .qty-cart .cart input
+        {
+        border: 1px solid #2b2c2f;
+    float: left;
+    height: 19px;
+    width: 25px;
+        }
+        .pricecomparison .qty-cart .cart .addtocart
+        {
+            display: block;
+    float: left;
+    font-size: 25px;
+    padding: 0 10px;
+    top: 0;
+    width: 17px;
+        }
+.red
+{
+    color :#ce0b10;
+}
+
+/*New Shopping Details*/
+.shopping-details{
+	margin:0 auto;
+	    border: 1px solid #c4c4c4;
+    padding: 5px;
+	width: 80%;
+}
+.shopping-header{
+	    padding: 10px;
+}
+    .shopping-header .printmail a span
+    {
+        padding: 10px;
+    background: #ce0b10;
+    color: #fff;
+    border-radius: 5px;
+    }
+    .shopping-header .printmail a{
+float: left;
+}
+.shopping-header .printmail a.delete{
+color: blue;
+    text-decoration: underline;
+    font-size: 16px;
+    font-weight: bold;
+}
+.shopping-body{
+	padding: 1px;
+    background: #f7f7f7;
+}
+.shopping-body .tilebox{
+	    border: 1px solid #e9e9e9;
+		background: #fff;
+		margin-bottom:10px;
+}
+.shopping-body .tilebox.last{
+	margin-bottom:0;
+}
+.company-name{
+	float:left;
+}
+.company-name td{
+	vertical-align:middle;
+	font-weight: bold;
+    font-size: 18px;
+}
+    .company-name td span
+    {
+        margin-left:7px;
+    }
+.shopping-details .printmail{
+	    float: right;
+    width: auto;
+        margin-top: 15px;
+}
+.tilebox table td{
+	padding:10px;
+	vertical-align:middle;
+}
+.tilebox p{
+	    margin-bottom: 3px;
+            text-align: left;
+          
+}
+.tilebox .pro-offer{
+	margin-bottom: 0px;
+}
+.redcolor{
+	color:#ce0b10;
+}
+.pro-name
+{
+    font-weight:bold;
+}
+.pro-name span{
+	display:block;
+	color: #82857a;
+    font-weight: normal;
+}
+.pro-name span.redcolor{
+	color:#ce0b10;
+}
+.qty-control .qty-minus{
+	width:38px;
+	height:38px;
+	background:url('../img/minus-normal.jpg') no-repeat;
+	display:inline-block;
+}
+.qty-control .qty-minus:hover{
+background:url('../img/minus-hover.jpg') no-repeat;
+}
+.qty-control .qty-plus{
+	width:38px;
+	height:38px;
+	background:url('../img/plus-normal.jpg') no-repeat;
+	display:inline-block;
+}
+.qty-control .qty-plus:hover{
+background:url('../img/plus-hover.jpg') no-repeat;
+}
+.line-through{
+text-decoration: line-through;
+color: #82857a;
+}
+.pro-offer a{
+	color:blue;
+	text-decoration:underline;
+	font-weight: bold;
+}
+.qty-control .qty-text{
+	    width: 35px;
+		height: 26px;
+        text-align: center;
+}
+.shopping-footer table td {
+    padding: 10px;
+    vertical-align: middle;
+}
+.shopping-footer table{
+	    border: 1px solid #e9e9e9;
+    background: #fff;
+    color: #ce0b10;
+    font-weight: bold;
+}
+    .shopping-footer table .clear_btn
+    {
+        padding: 10px;
+    background: #ce0b10;
+    color: #fff;
+    border-radius: 5px;
+    }
+.closebtn{
+	background:url('../img/closebtn.png') no-repeat;
+	padding: 5px 5px 5px 28px;
+	display:block;
+	font-weight: bold;
+}
+.closebtn:hover{
+	text-decoration:underline;
+}
+.shopping-footer{
+	padding: 1px;
+    background: #f7f7f7;
+}
+.shopping-footer table td.last p span{
+    margin-left: 40px;
+}
+.shopping-footer table td.last p{
+	text-align: right;
+    padding-right: 5px;
+}
+/*Zoom image fix*/
+.zoomLens
+{
+    width: 135px !important;
+    left: 0px !important;
+}
+.zoomWindowContainer div
+{
+    background-position:center 50px !important;
+}

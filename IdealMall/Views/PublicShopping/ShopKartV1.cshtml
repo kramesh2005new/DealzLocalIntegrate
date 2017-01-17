@@ -1,0 +1,184 @@
+﻿@model IEnumerable<IdealMall.Entities.ShoppingList>
+@{
+    Layout = null;
+
+    List<IdealMall.Entities.LocalShop> shopDetails = (List<IdealMall.Entities.LocalShop>)(ViewData["LocalShops"]);
+    IdealMall.Entities.LocalShop shopDetail = shopDetails.Where(m1 => m1.ID == Model.FirstOrDefault().ShopId).ToList().FirstOrDefault();
+    
+}
+<script language="javascript">
+    function DeleteProduct_ShoppingList(product, volume, shop_id) {
+        var result = window.confirm("Are you sure to delete the product?");
+        if (result) {
+            $.ajax({
+                cache: false,
+                async: false,
+                type: "POST",
+                url: "@Url.Action("ShoppingList_Delete_Public", "PublicShopping")",
+                data: { Product: product, volume: volume, Shop_id: shop_id },
+                success: function (data) {
+                    if (data == "true") {
+                        window.location.href = "@(Url.Action("Index", "PublicShopping"))";
+                        alert("Product deleted successfully.");
+                    }
+                    else {
+                        alert("Error deleting Shopping List");
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert("Error deleting Shopping List");
+                }
+            });
+        }
+
+    }
+
+    function Delete_ShoppingList(shop_id) {
+        var result = window.confirm("Are you sure to delete all products in selected shop?");
+        if (result) {
+            $.ajax({
+                cache: false,
+                async: false,
+                type: "POST",
+                url: "@Url.Action("ShoppingList_Shop_Public", "PublicShopping")",
+                data: { Shop_id: shop_id },
+                success: function (data) {
+                    if (data == "true") {
+                        window.location.href = "@(Url.Action("Index", "PublicShopping"))";
+                        alert("Products deleted successfully.");
+                    }
+                    else {
+                        alert("Error deleting Shopping List");
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert("Error deleting Shopping List");
+                }
+            });
+        }
+
+    }
+
+    function Update_ShoppingList(product, volume, shop_id, qty) {
+        var result = window.confirm("Are you sure to update?");
+        if (result) {
+            $.ajax({
+                cache: false,
+                async: false,
+                type: "POST",
+                url: "@Url.Action("Update_ShoppingList", "PublicShopping")",
+                data: { Product: product, volume: volume, Shop_id: shop_id, qty: qty },
+                success: function (data) {
+                    if (data == "true") {
+                        window.location.href = "@(Url.Action("Index", "PublicShopping"))";
+                        alert("Products updated successfully.");
+                    }
+                    else {
+                        alert("Error updating Shopping List");
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert("Error updating Shopping List");
+                }
+            });
+        }
+
+    }
+
+</script>
+<div class="shopping-details">
+    <div class="shopping-header clearfix">
+        <div class="company-name">
+
+            <table cellpadding="0" cellspacing="0" width="100%">
+                <tr class="headingrow">
+
+                    @if (shopDetail != null)
+                    {
+                        <td>
+                            <img src="@Url.Content(shopDetail.ImgUrl)" border="0" alt="company1" />
+                        </td>
+                        
+                        string strShopName = shopDetail.Name;
+                        if (!string.IsNullOrWhiteSpace(shopDetail.Shop_Orginal_Name))
+                        {
+                            strShopName = shopDetail.Shop_Orginal_Name;
+                        }
+                        <td>
+                            <span>@strShopName</span>
+                        </td>
+                    }
+
+                </tr>
+            </table>
+        </div>
+        <div class="printmail">
+            <a class="delete" href="javascript:void(0);" onclick="Delete_ShoppingList ('@shopDetail.ID' );">Delete</a>
+            <a href="javascript:void(0);">
+                <span>CheckOut</span></a>
+        </div>
+    </div>
+
+
+    @for (int kartCnt = 1; kartCnt <= Model.Count(); kartCnt++)
+    {
+        <div class="shopping-body clearfix">
+            <div class="tilebox">
+                <table width="100%">
+
+                    <tr>
+                        <td width="15%">
+                            <img src="@Url.Content(Model.ToList()[kartCnt - 1].Product_ImgUrl)" border="0" alt=@Model.ToList()[kartCnt - 1].Product /></td>
+
+                        <td width="50%">
+                            <p class="pro-name">@Model.ToList()[kartCnt - 1].Product <span>(@Model.ToList()[kartCnt - 1].Volume )</span>
+                                @if (!string.IsNullOrWhiteSpace(Model.ToList()[kartCnt - 1].Additional_Info))
+                                {
+                                    <span class="redcolor">@Model.ToList()[kartCnt - 1].Additional_Info </span>
+                                }
+                            </p>
+                            <p class="pro-amt">
+                                <span class="redcolor">£@Model.ToList()[kartCnt - 1].OfferRate </span>
+                                @if (!string.IsNullOrWhiteSpace(Model.ToList()[kartCnt - 1].Previous_Prize))
+                                {
+                                    if (Convert.ToInt32(Model.ToList()[kartCnt - 1].Previous_Prize) > 0)
+                                    {
+                                    <span style="color: #000;">(Was <span class="line-through">£@Model.ToList()[kartCnt - 1].Previous_Prize </span>)</span>
+                                    }
+                                }
+                            </p>
+                            <p class="pro-offer">
+                                Offer Valid Until: <span class="redcolor">@Model.ToList()[kartCnt - 1].Offer_Date </span>|  
+                                     <a href="javascript:void(0);" onclick="DeleteProduct_ShoppingList('@Model.ToList()[kartCnt - 1].Product','@Model.ToList()[kartCnt - 1].Volume','@Model.ToList()[kartCnt - 1].ShopId' );">Delete</a>
+                            </p>
+                        </td>
+                        <td width="25%">
+                            <p class="qty-control">
+                                <input type="button" value="" class="qty-minus"  onclick= "@("Update_ShoppingList('" + Model.ToList()[kartCnt - 1].Product + "','" + Model.ToList()[kartCnt - 1].Volume + "', '" + Model.ToList()[kartCnt - 1].ShopId + "', '" + Convert.ToString(Convert.ToInt32(Model.ToList()[kartCnt - 1].Qty) - 1) + "')")"/>
+                                <input type="text" id="lblQty" value =" @Model.ToList()[kartCnt - 1].Qty" class="qty-text" readonly="true" />
+                                <input type="button" value="" class="qty-plus" onclick= " @("Update_ShoppingList('" + Model.ToList()[kartCnt - 1].Product + "','" + Model.ToList()[kartCnt - 1].Volume + "   ', '" + Model.ToList()[kartCnt - 1].ShopId + "', '" + Convert.ToString(Convert.ToInt32(Model.ToList()[kartCnt - 1].Qty) + 1) + "')")"/>
+                            </p>
+                        </td>
+
+                        <td>
+                            <p>£@Model.ToList()[kartCnt - 1].Total </p>
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
+        </div>
+    }
+    <div class="shopping-footer">
+        <table width="100%">
+            <tr>
+                <td width="50%" class="first">
+                    @*  <a href="javascript:void(0);" class="closebtn redcolor">Clear My Shopping List</a>*@
+                </td>
+                <td class="last">
+                    <p>Total: <span>£@Model.Sum(m => m.Total)</span></p>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

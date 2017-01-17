@@ -1,0 +1,1164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="IdealmallModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CashAndCarrys">
+          <Key>
+            <PropertyRef Name="Shop_Id" />
+          </Key>
+          <Property Name="Shop_Id" Type="int" Nullable="false" />
+          <Property Name="Shop_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Shop_ImageURL" Type="varchar" MaxLength="255" />
+          <Property Name="Available" Type="char" MaxLength="1" />
+          <Property Name="Type" Type="char" MaxLength="1" />
+          <Property Name="Live_Available" Type="varchar" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="CreateAccount_Public">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="FirstName" Type="varchar" MaxLength="30" />
+          <Property Name="LastName" Type="varchar" MaxLength="30" />
+          <Property Name="ContactNo" Type="varchar" MaxLength="20" />
+          <Property Name="UserId" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="PostCode" Type="varchar" MaxLength="10" />
+          <Property Name="DateInserted" Type="datetime" Nullable="false" />
+          <Property Name="User_Password" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Idealmall.dbo.CreateAccount_Trade' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="CreateAccount_Trade">
+          <Key>
+            <PropertyRef Name="DateInserted" />
+          </Key>
+          <Property Name="FirstName" Type="varchar" MaxLength="30" />
+          <Property Name="LastName" Type="varchar" MaxLength="30" />
+          <Property Name="BusinessName" Type="varchar" MaxLength="50" />
+          <Property Name="EmailId" Type="varchar" MaxLength="30" />
+          <Property Name="ContactNo" Type="varchar" MaxLength="20" />
+          <Property Name="DateInserted" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Idealmall.dbo.Employee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmpID" />
+          </Key>
+          <Property Name="EmpID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="55" />
+          <Property Name="Salary" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="Login_Public">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="PostCode" Type="varchar" MaxLength="10" />
+          <Property Name="DateInserted" Type="datetime" Nullable="false" />
+          <Property Name="User_Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="Login_Trade">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="PostCode" Type="varchar" MaxLength="10" />
+          <Property Name="DateInserted" Type="datetime" Nullable="false" />
+          <Property Name="User_Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="char" MaxLength="1" />
+          <Property Name="UserName" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="OfferProducts_Public">
+          <Key>
+            <PropertyRef Name="OfferProducts_Id" />
+          </Key>
+          <Property Name="OfferProducts_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Shop_Id" Type="int" />
+          <Property Name="Offer_Rate" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="Volume" Type="varchar" MaxLength="30" />
+          <Property Name="PostCode" Type="varchar" MaxLength="10" />
+          <Property Name="Product_ImageURL" Type="varchar" MaxLength="255" />
+          <Property Name="SellAt" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="DateInserted" Type="datetime" Nullable="false" />
+          <Property Name="POR" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="VAT" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="Product" Type="varchar" MaxLength="200" />
+          <Property Name="Category" Type="varchar" MaxLength="100" />
+          <Property Name="Additional_Offer" Type="varchar" MaxLength="200" />
+          <Property Name="Offer_Enddate" Type="date" />
+          <Property Name="Department" Type="varchar" MaxLength="50" />
+          <Property Name="Additional_Info" Type="varchar" MaxLength="200" />
+          <Property Name="Previous_Prize" Type="decimal" Precision="12" Scale="2" />
+        </EntityType>
+        <EntityType Name="OfferProducts_Trade">
+          <Key>
+            <PropertyRef Name="OfferProducts_Id" />
+          </Key>
+          <Property Name="OfferProducts_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Shop_Id" Type="int" />
+          <Property Name="Offer_Rate" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="Volume" Type="varchar" MaxLength="30" />
+          <Property Name="PostCode" Type="varchar" MaxLength="10" />
+          <Property Name="Product_ImageURL" Type="varchar" MaxLength="255" />
+          <Property Name="Max_Retail_Price" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="DateInserted" Type="datetime" Nullable="false" />
+          <Property Name="POR" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="VAT" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="Product" Type="varchar" MaxLength="200" />
+          <Property Name="Category" Type="varchar" MaxLength="100" />
+          <Property Name="Additional_Offer" Type="varchar" MaxLength="200" />
+          <Property Name="Offer_Enddate" Type="date" />
+          <Property Name="Department" Type="varchar" MaxLength="50" />
+          <Property Name="Additional_Info" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="outcodepostcodes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="outcode" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="lat" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="lng" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Idealmall.dbo.postcodelatlng' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="postcodelatlng">
+          <Key>
+            <PropertyRef Name="postcode" />
+            <PropertyRef Name="latitude" />
+            <PropertyRef Name="longitude" />
+          </Key>
+          <Property Name="postcode" Type="varchar" MaxLength="9" Nullable="false" />
+          <Property Name="latitude" Type="decimal" Precision="18" Scale="15" Nullable="false" />
+          <Property Name="longitude" Type="decimal" Precision="18" Scale="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Retailshops">
+          <Key>
+            <PropertyRef Name="Shop_Id" />
+          </Key>
+          <Property Name="Shop_Id" Type="int" Nullable="false" />
+          <Property Name="Shop_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Shop_ImageURL" Type="varchar" MaxLength="255" />
+          <Property Name="Postcode" Type="varchar" MaxLength="10" />
+          <Property Name="Address" Type="varchar" MaxLength="255" />
+          <Property Name="Available" Type="char" MaxLength="1" />
+          <Property Name="Shop_Orginal_Name" Type="varchar" MaxLength="100" />
+          <Property Name="Services" Type="varchar" MaxLength="1000" />
+          <Property Name="Services_Text" Type="varchar" MaxLength="1000" />
+          <Property Name="shopping_Timing" Type="varchar" MaxLength="100" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Idealmall.dbo.Retailshops_bkp' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Retailshops_bkp">
+          <Key>
+            <PropertyRef Name="Shop_Id" />
+            <PropertyRef Name="Shop_Name" />
+          </Key>
+          <Property Name="Shop_Id" Type="int" Nullable="false" />
+          <Property Name="Shop_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Shop_ImageURL" Type="varchar" MaxLength="255" />
+          <Property Name="Postcode" Type="varchar" MaxLength="10" />
+          <Property Name="Address" Type="varchar" MaxLength="255" />
+          <Property Name="Available" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="ShoppingList_Public">
+          <Key>
+            <PropertyRef Name="Shopping_Id" />
+          </Key>
+          <Property Name="Shopping_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Shop_Id" Type="int" />
+          <Property Name="Product" Type="varchar" MaxLength="200" />
+          <Property Name="Offer_Rate" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="Volume" Type="varchar" MaxLength="30" />
+          <Property Name="Qty" Type="int" />
+          <Property Name="VAT" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="Total" Type="decimal" Precision="12" Scale="2" />
+        </EntityType>
+        <EntityType Name="ShoppingList_Trade">
+          <Key>
+            <PropertyRef Name="Shopping_Id" />
+          </Key>
+          <Property Name="Shopping_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="varchar" MaxLength="100" />
+          <Property Name="Shop_Id" Type="int" />
+          <Property Name="Product" Type="varchar" MaxLength="200" />
+          <Property Name="Offer_Rate" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="Volume" Type="varchar" MaxLength="30" />
+          <Property Name="Qty" Type="int" />
+          <Property Name="VAT" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="Total" Type="decimal" Precision="12" Scale="2" />
+        </EntityType>
+        <EntityType Name="SmallPostcodeTable">
+          <Key>
+            <PropertyRef Name="postcode" />
+          </Key>
+          <Property Name="postcode" Type="varchar" MaxLength="9" Nullable="false" />
+          <Property Name="latitude" Type="decimal" Precision="18" Scale="15" Nullable="false" />
+          <Property Name="longitude" Type="decimal" Precision="18" Scale="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Standards">
+          <Key>
+            <PropertyRef Name="StandardId" />
+          </Key>
+          <Property Name="StandardId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StandardName" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Students">
+          <Key>
+            <PropertyRef Name="StudentID" />
+          </Key>
+          <Property Name="StudentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StudentName" Type="nvarchar(max)" />
+          <Property Name="Weight" Type="real" Nullable="false" />
+          <Property Name="Standard_StandardId" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Idealmall.dbo.UserDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="UserDetail">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="PhoneNo" />
+          </Key>
+          <Property Name="UserID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="20" />
+          <Property Name="EmailID" Type="nvarchar" MaxLength="50" />
+          <Property Name="PhoneNo" Type="nvarchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Idealmall.deal.Postcodepart3' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Postcodepart3">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="postcode" />
+            <PropertyRef Name="latitude" />
+            <PropertyRef Name="longitude" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="postcode" Type="varchar" MaxLength="9" Nullable="false" />
+          <Property Name="latitude" Type="decimal" Precision="18" Scale="15" Nullable="false" />
+          <Property Name="longitude" Type="decimal" Precision="18" Scale="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SmallPostcodeTable1">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="postcode" Type="varchar" MaxLength="9" Nullable="false" />
+          <Property Name="latitude" Type="decimal" Precision="18" Scale="15" Nullable="false" />
+          <Property Name="longitude" Type="decimal" Precision="18" Scale="15" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__OfferProd__Shop___2180FB33">
+          <End Role="Retailshops" Type="Self.Retailshops" Multiplicity="0..1" />
+          <End Role="OfferProducts_Public" Type="Self.OfferProducts_Public" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Retailshops">
+              <PropertyRef Name="Shop_Id" />
+            </Principal>
+            <Dependent Role="OfferProducts_Public">
+              <PropertyRef Name="Shop_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OfferProd__Shop___3429BB53">
+          <End Role="Retailshops" Type="Self.Retailshops" Multiplicity="0..1" />
+          <End Role="OfferProducts_Public" Type="Self.OfferProducts_Public" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Retailshops">
+              <PropertyRef Name="Shop_Id" />
+            </Principal>
+            <Dependent Role="OfferProducts_Public">
+              <PropertyRef Name="Shop_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ShoppingL__Shop___0E04126B">
+          <End Role="CashAndCarrys" Type="Self.CashAndCarrys" Multiplicity="0..1" />
+          <End Role="ShoppingList_Trade" Type="Self.ShoppingList_Trade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CashAndCarrys">
+              <PropertyRef Name="Shop_Id" />
+            </Principal>
+            <Dependent Role="ShoppingList_Trade">
+              <PropertyRef Name="Shop_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ShoppingL__Shop___10E07F16">
+          <End Role="Retailshops" Type="Self.Retailshops" Multiplicity="0..1" />
+          <End Role="ShoppingList_Public" Type="Self.ShoppingList_Public" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Retailshops">
+              <PropertyRef Name="Shop_Id" />
+            </Principal>
+            <Dependent Role="ShoppingList_Public">
+              <PropertyRef Name="Shop_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ShoppingL__Shop___11D4A34F">
+          <End Role="Retailshops" Type="Self.Retailshops" Multiplicity="0..1" />
+          <End Role="ShoppingList_Public" Type="Self.ShoppingList_Public" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Retailshops">
+              <PropertyRef Name="Shop_Id" />
+            </Principal>
+            <Dependent Role="ShoppingList_Public">
+              <PropertyRef Name="Shop_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ShoppingL__Shop___12C8C788">
+          <End Role="Retailshops" Type="Self.Retailshops" Multiplicity="0..1" />
+          <End Role="ShoppingList_Public" Type="Self.ShoppingList_Public" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Retailshops">
+              <PropertyRef Name="Shop_Id" />
+            </Principal>
+            <Dependent Role="ShoppingList_Public">
+              <PropertyRef Name="Shop_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Students_dbo_Standards_Standard_StandardId">
+          <End Role="Standards" Type="Self.Standards" Multiplicity="0..1" />
+          <End Role="Students" Type="Self.Students" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Standards">
+              <PropertyRef Name="StandardId" />
+            </Principal>
+            <Dependent Role="Students">
+              <PropertyRef Name="Standard_StandardId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="f_sp_ImportExcel_Trade" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="_sp_ImportExcel_Trade">
+          <Parameter Name="Source" Type="varchar" Mode="In" />
+          <Parameter Name="SourceSheet" Type="varchar" Mode="In" />
+          <Parameter Name="DestinationTable" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="IdealmallModelStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CashAndCarrys" EntityType="Self.CashAndCarrys" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CreateAccount_Public" EntityType="Self.CreateAccount_Public" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Login_Public" EntityType="Self.Login_Public" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Login_Trade" EntityType="Self.Login_Trade" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OfferProducts_Public" EntityType="Self.OfferProducts_Public" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OfferProducts_Trade" EntityType="Self.OfferProducts_Trade" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="outcodepostcodes" EntityType="Self.outcodepostcodes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Retailshops" EntityType="Self.Retailshops" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShoppingList_Public" EntityType="Self.ShoppingList_Public" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShoppingList_Trade" EntityType="Self.ShoppingList_Trade" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SmallPostcodeTable" EntityType="Self.SmallPostcodeTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Standards" EntityType="Self.Standards" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SmallPostcodeTable1" EntityType="Self.SmallPostcodeTable1" Schema="deal" Table="SmallPostcodeTable" store:Type="Tables" />
+          <EntitySet Name="CreateAccount_Trade" EntityType="Self.CreateAccount_Trade" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [CreateAccount_Trade].[FirstName] AS [FirstName], 
+    [CreateAccount_Trade].[LastName] AS [LastName], 
+    [CreateAccount_Trade].[BusinessName] AS [BusinessName], 
+    [CreateAccount_Trade].[EmailId] AS [EmailId], 
+    [CreateAccount_Trade].[ContactNo] AS [ContactNo], 
+    [CreateAccount_Trade].[DateInserted] AS [DateInserted]
+    FROM [dbo].[CreateAccount_Trade] AS [CreateAccount_Trade]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Employee" EntityType="Self.Employee" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Employee].[EmpID] AS [EmpID], 
+    [Employee].[Name] AS [Name], 
+    [Employee].[Salary] AS [Salary]
+    FROM [dbo].[Employee] AS [Employee]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="postcodelatlng" EntityType="Self.postcodelatlng" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [postcodelatlng].[postcode] AS [postcode], 
+    [postcodelatlng].[latitude] AS [latitude], 
+    [postcodelatlng].[longitude] AS [longitude]
+    FROM [dbo].[postcodelatlng] AS [postcodelatlng]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Retailshops_bkp" EntityType="Self.Retailshops_bkp" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Retailshops_bkp].[Shop_Id] AS [Shop_Id], 
+    [Retailshops_bkp].[Shop_Name] AS [Shop_Name], 
+    [Retailshops_bkp].[Shop_ImageURL] AS [Shop_ImageURL], 
+    [Retailshops_bkp].[Postcode] AS [Postcode], 
+    [Retailshops_bkp].[Address] AS [Address], 
+    [Retailshops_bkp].[Available] AS [Available]
+    FROM [dbo].[Retailshops_bkp] AS [Retailshops_bkp]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="UserDetail" EntityType="Self.UserDetail" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [UserDetail].[UserID] AS [UserID], 
+    [UserDetail].[FirstName] AS [FirstName], 
+    [UserDetail].[LastName] AS [LastName], 
+    [UserDetail].[EmailID] AS [EmailID], 
+    [UserDetail].[PhoneNo] AS [PhoneNo]
+    FROM [dbo].[UserDetail] AS [UserDetail]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Postcodepart3" EntityType="Self.Postcodepart3" store:Type="Tables" store:Schema="deal">
+            <DefiningQuery>SELECT 
+    [Postcodepart3].[id] AS [id], 
+    [Postcodepart3].[postcode] AS [postcode], 
+    [Postcodepart3].[latitude] AS [latitude], 
+    [Postcodepart3].[longitude] AS [longitude]
+    FROM [deal].[Postcodepart3] AS [Postcodepart3]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__OfferProd__Shop___2180FB33" Association="Self.FK__OfferProd__Shop___2180FB33">
+            <End Role="Retailshops" EntitySet="Retailshops" />
+            <End Role="OfferProducts_Public" EntitySet="OfferProducts_Public" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OfferProd__Shop___3429BB53" Association="Self.FK__OfferProd__Shop___3429BB53">
+            <End Role="Retailshops" EntitySet="Retailshops" />
+            <End Role="OfferProducts_Public" EntitySet="OfferProducts_Public" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ShoppingL__Shop___0E04126B" Association="Self.FK__ShoppingL__Shop___0E04126B">
+            <End Role="CashAndCarrys" EntitySet="CashAndCarrys" />
+            <End Role="ShoppingList_Trade" EntitySet="ShoppingList_Trade" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ShoppingL__Shop___10E07F16" Association="Self.FK__ShoppingL__Shop___10E07F16">
+            <End Role="Retailshops" EntitySet="Retailshops" />
+            <End Role="ShoppingList_Public" EntitySet="ShoppingList_Public" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ShoppingL__Shop___11D4A34F" Association="Self.FK__ShoppingL__Shop___11D4A34F">
+            <End Role="Retailshops" EntitySet="Retailshops" />
+            <End Role="ShoppingList_Public" EntitySet="ShoppingList_Public" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ShoppingL__Shop___12C8C788" Association="Self.FK__ShoppingL__Shop___12C8C788">
+            <End Role="Retailshops" EntitySet="Retailshops" />
+            <End Role="ShoppingList_Public" EntitySet="ShoppingList_Public" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Students_dbo_Standards_Standard_StandardId" Association="Self.FK_dbo_Students_dbo_Standards_Standard_StandardId">
+            <End Role="Standards" EntitySet="Standards" />
+            <End Role="Students" EntitySet="Students" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="IdealmallModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CashAndCarry">
+          <Key>
+            <PropertyRef Name="Shop_Id" />
+          </Key>
+          <Property Name="Shop_Id" Type="Int32" Nullable="false" />
+          <Property Name="Shop_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Shop_ImageURL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Available" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Type" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="ShoppingList_Trade" Relationship="Self.FK__ShoppingL__Shop___5EBF139D" FromRole="CashAndCarrys" ToRole="ShoppingList_Trade" />
+          <Property Name="Live_Available" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CreateAccount_Public">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="FirstName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ContactNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="UserId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PostCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DateInserted" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="User_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Login_Public">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PostCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DateInserted" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="User_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Login_Trade">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PostCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DateInserted" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="User_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="OfferProducts_Public">
+          <Key>
+            <PropertyRef Name="OfferProducts_Id" />
+          </Key>
+          <Property Name="OfferProducts_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Shop_Id" Type="Int32" />
+          <Property Name="Offer_Rate" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="Volume" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PostCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Product_ImageURL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="SellAt" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="DateInserted" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="POR" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="VAT" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="Product" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Category" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Additional_Offer" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Offer_Enddate" Type="DateTime" Precision="0" />
+          <Property Name="Department" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Additional_Info" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Retailshop" Relationship="Self.FK__OfferProd__Shop___2180FB33" FromRole="OfferProducts_Public" ToRole="Retailshops" />
+          <Property Name="Previous_Prize" Type="Decimal" Precision="12" Scale="2" />
+        </EntityType>
+        <EntityType Name="OfferProducts_Trade">
+          <Key>
+            <PropertyRef Name="OfferProducts_Id" />
+          </Key>
+          <Property Name="OfferProducts_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Shop_Id" Type="Int32" />
+          <Property Name="Offer_Rate" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="Volume" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PostCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Product_ImageURL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Max_Retail_Price" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="DateInserted" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="POR" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="VAT" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="Product" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Category" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Additional_Offer" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Offer_Enddate" Type="DateTime" Precision="0" />
+          <Property Name="Department" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Additional_Info" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="outcodepostcode">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="outcode" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="lat" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="lng" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Retailshop">
+          <Key>
+            <PropertyRef Name="Shop_Id" />
+          </Key>
+          <Property Name="Shop_Id" Type="Int32" Nullable="false" />
+          <Property Name="Shop_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Shop_ImageURL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Postcode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Available" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Shop_Orginal_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Services" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="OfferProducts_Public" Relationship="Self.FK__OfferProd__Shop___2180FB33" FromRole="Retailshops" ToRole="OfferProducts_Public" />
+          <NavigationProperty Name="ShoppingList_Public" Relationship="Self.FK__ShoppingL__Shop___4F47C5E3" FromRole="Retailshops" ToRole="ShoppingList_Public" />
+          <NavigationProperty Name="ShoppingList_Public1" Relationship="Self.FK__ShoppingL__Shop___51300E55" FromRole="Retailshops" ToRole="ShoppingList_Public" />
+          <NavigationProperty Name="ShoppingList_Public2" Relationship="Self.FK__ShoppingL__Shop___540C7B00" FromRole="Retailshops" ToRole="ShoppingList_Public" />
+          <Property Name="Services_Text" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="shopping_Timing" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ShoppingList_Public">
+          <Key>
+            <PropertyRef Name="Shopping_Id" />
+          </Key>
+          <Property Name="Shopping_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Shop_Id" Type="Int32" />
+          <Property Name="Product" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Offer_Rate" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="Volume" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Qty" Type="Int32" />
+          <Property Name="VAT" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="Total" Type="Decimal" Precision="12" Scale="2" />
+          <NavigationProperty Name="Retailshop" Relationship="Self.FK__ShoppingL__Shop___4F47C5E3" FromRole="ShoppingList_Public" ToRole="Retailshops" />
+          <NavigationProperty Name="Retailshop1" Relationship="Self.FK__ShoppingL__Shop___51300E55" FromRole="ShoppingList_Public" ToRole="Retailshops" />
+          <NavigationProperty Name="Retailshop2" Relationship="Self.FK__ShoppingL__Shop___540C7B00" FromRole="ShoppingList_Public" ToRole="Retailshops" />
+        </EntityType>
+        <EntityType Name="ShoppingList_Trade">
+          <Key>
+            <PropertyRef Name="Shopping_Id" />
+          </Key>
+          <Property Name="Shopping_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Shop_Id" Type="Int32" />
+          <Property Name="Product" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Offer_Rate" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="Volume" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Qty" Type="Int32" />
+          <Property Name="VAT" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="Total" Type="Decimal" Precision="12" Scale="2" />
+          <NavigationProperty Name="CashAndCarry" Relationship="Self.FK__ShoppingL__Shop___5EBF139D" FromRole="ShoppingList_Trade" ToRole="CashAndCarrys" />
+        </EntityType>
+        <EntityType Name="SmallPostcodeTable">
+          <Key>
+            <PropertyRef Name="postcode" />
+          </Key>
+          <Property Name="postcode" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="latitude" Type="Decimal" Precision="18" Scale="15" Nullable="false" />
+          <Property Name="longitude" Type="Decimal" Precision="18" Scale="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Standard">
+          <Key>
+            <PropertyRef Name="StandardId" />
+          </Key>
+          <Property Name="StandardId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StandardName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Students" Relationship="Self.FK_dbo_Students_dbo_Standards_Standard_StandardId" FromRole="Standards" ToRole="Students" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="StudentID" />
+          </Key>
+          <Property Name="StudentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StudentName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Weight" Type="Single" Nullable="false" />
+          <Property Name="Standard_StandardId" Type="Int32" />
+          <NavigationProperty Name="Standard" Relationship="Self.FK_dbo_Students_dbo_Standards_Standard_StandardId" FromRole="Students" ToRole="Standards" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="SmallPostcodeTable1">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="postcode" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="latitude" Type="Decimal" Precision="18" Scale="15" Nullable="false" />
+          <Property Name="longitude" Type="Decimal" Precision="18" Scale="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CreateAccount_Trade">
+          <Key>
+            <PropertyRef Name="DateInserted" />
+          </Key>
+          <Property Name="FirstName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="BusinessName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmailId" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ContactNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DateInserted" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmpID" />
+          </Key>
+          <Property Name="EmpID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+          <Property Name="Salary" Type="Decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="Retailshops_bkp">
+          <Key>
+            <PropertyRef Name="Shop_Id" />
+            <PropertyRef Name="Shop_Name" />
+          </Key>
+          <Property Name="Shop_Id" Type="Int32" Nullable="false" />
+          <Property Name="Shop_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Shop_ImageURL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Postcode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Available" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="UserDetail">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="PhoneNo" />
+          </Key>
+          <Property Name="UserID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="EmailID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Postcodepart3">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="postcode" />
+            <PropertyRef Name="latitude" />
+            <PropertyRef Name="longitude" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="postcode" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="latitude" Type="Decimal" Precision="18" Scale="15" Nullable="false" />
+          <Property Name="longitude" Type="Decimal" Precision="18" Scale="15" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__ShoppingL__Shop___5EBF139D">
+          <End Role="CashAndCarrys" Type="Self.CashAndCarry" Multiplicity="0..1" />
+          <End Role="ShoppingList_Trade" Type="Self.ShoppingList_Trade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CashAndCarrys">
+              <PropertyRef Name="Shop_Id" />
+            </Principal>
+            <Dependent Role="ShoppingList_Trade">
+              <PropertyRef Name="Shop_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OfferProd__Shop___2180FB33">
+          <End Role="Retailshops" Type="Self.Retailshop" Multiplicity="0..1" />
+          <End Role="OfferProducts_Public" Type="Self.OfferProducts_Public" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Retailshops">
+              <PropertyRef Name="Shop_Id" />
+            </Principal>
+            <Dependent Role="OfferProducts_Public">
+              <PropertyRef Name="Shop_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ShoppingL__Shop___4F47C5E3">
+          <End Role="Retailshops" Type="Self.Retailshop" Multiplicity="0..1" />
+          <End Role="ShoppingList_Public" Type="Self.ShoppingList_Public" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Retailshops">
+              <PropertyRef Name="Shop_Id" />
+            </Principal>
+            <Dependent Role="ShoppingList_Public">
+              <PropertyRef Name="Shop_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ShoppingL__Shop___51300E55">
+          <End Role="Retailshops" Type="Self.Retailshop" Multiplicity="0..1" />
+          <End Role="ShoppingList_Public" Type="Self.ShoppingList_Public" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Retailshops">
+              <PropertyRef Name="Shop_Id" />
+            </Principal>
+            <Dependent Role="ShoppingList_Public">
+              <PropertyRef Name="Shop_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ShoppingL__Shop___540C7B00">
+          <End Role="Retailshops" Type="Self.Retailshop" Multiplicity="0..1" />
+          <End Role="ShoppingList_Public" Type="Self.ShoppingList_Public" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Retailshops">
+              <PropertyRef Name="Shop_Id" />
+            </Principal>
+            <Dependent Role="ShoppingList_Public">
+              <PropertyRef Name="Shop_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Students_dbo_Standards_Standard_StandardId">
+          <End Role="Standards" Type="Self.Standard" Multiplicity="0..1" />
+          <End Role="Students" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Standards">
+              <PropertyRef Name="StandardId" />
+            </Principal>
+            <Dependent Role="Students">
+              <PropertyRef Name="Standard_StandardId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="IdealmallEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+          <EntitySet Name="CashAndCarrys" EntityType="Self.CashAndCarry" />
+          <EntitySet Name="CreateAccount_Public" EntityType="Self.CreateAccount_Public" />
+          <EntitySet Name="Login_Public" EntityType="Self.Login_Public" />
+          <EntitySet Name="Login_Trade" EntityType="Self.Login_Trade" />
+          <EntitySet Name="OfferProducts_Public" EntityType="Self.OfferProducts_Public" />
+          <EntitySet Name="OfferProducts_Trade" EntityType="Self.OfferProducts_Trade" />
+          <EntitySet Name="outcodepostcodes" EntityType="Self.outcodepostcode" />
+          <EntitySet Name="Retailshops" EntityType="Self.Retailshop" />
+          <EntitySet Name="ShoppingList_Public" EntityType="Self.ShoppingList_Public" />
+          <EntitySet Name="ShoppingList_Trade" EntityType="Self.ShoppingList_Trade" />
+          <EntitySet Name="SmallPostcodeTables" EntityType="Self.SmallPostcodeTable" />
+          <EntitySet Name="Standards" EntityType="Self.Standard" />
+          <EntitySet Name="Students" EntityType="Self.Student" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="SmallPostcodeTable1" EntityType="Self.SmallPostcodeTable1" />
+          <EntitySet Name="CreateAccount_Trade" EntityType="Self.CreateAccount_Trade" />
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="Retailshops_bkp" EntityType="Self.Retailshops_bkp" />
+          <EntitySet Name="UserDetails" EntityType="Self.UserDetail" />
+          <EntitySet Name="Postcodepart3" EntityType="Self.Postcodepart3" />
+          <AssociationSet Name="FK__ShoppingL__Shop___5EBF139D" Association="Self.FK__ShoppingL__Shop___5EBF139D">
+            <End Role="CashAndCarrys" EntitySet="CashAndCarrys" />
+            <End Role="ShoppingList_Trade" EntitySet="ShoppingList_Trade" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OfferProd__Shop___2180FB33" Association="Self.FK__OfferProd__Shop___2180FB33">
+            <End Role="Retailshops" EntitySet="Retailshops" />
+            <End Role="OfferProducts_Public" EntitySet="OfferProducts_Public" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ShoppingL__Shop___4F47C5E3" Association="Self.FK__ShoppingL__Shop___4F47C5E3">
+            <End Role="Retailshops" EntitySet="Retailshops" />
+            <End Role="ShoppingList_Public" EntitySet="ShoppingList_Public" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ShoppingL__Shop___51300E55" Association="Self.FK__ShoppingL__Shop___51300E55">
+            <End Role="Retailshops" EntitySet="Retailshops" />
+            <End Role="ShoppingList_Public" EntitySet="ShoppingList_Public" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ShoppingL__Shop___540C7B00" Association="Self.FK__ShoppingL__Shop___540C7B00">
+            <End Role="Retailshops" EntitySet="Retailshops" />
+            <End Role="ShoppingList_Public" EntitySet="ShoppingList_Public" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Students_dbo_Standards_Standard_StandardId" Association="Self.FK_dbo_Students_dbo_Standards_Standard_StandardId">
+            <End Role="Standards" EntitySet="Standards" />
+            <End Role="Students" EntitySet="Students" />
+          </AssociationSet>
+          <FunctionImport Name="f_sp_ImportExcel_Trade">
+            <Parameter Name="Source" Mode="In" Type="String" />
+            <Parameter Name="SourceSheet" Mode="In" Type="String" />
+            <Parameter Name="DestinationTable" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="postcodelatlngs" EntityType="IdealmallModel.postcodelatlng" />
+        </EntityContainer>
+        <EntityType Name="postcodelatlng">
+          <Key>
+            <PropertyRef Name="postcode" />
+            <PropertyRef Name="latitude" />
+            <PropertyRef Name="longitude" />
+          </Key>
+          <Property Name="postcode" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="latitude" Type="Decimal" Nullable="false" Precision="18" Scale="15" />
+          <Property Name="longitude" Type="Decimal" Nullable="false" Precision="18" Scale="15" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="IdealmallModelStoreContainer" CdmEntityContainer="IdealmallEntities">
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="IdealmallModel.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CashAndCarrys">
+            <EntityTypeMapping TypeName="IdealmallModel.CashAndCarry">
+              <MappingFragment StoreEntitySet="CashAndCarrys">
+                <ScalarProperty Name="Live_Available" ColumnName="Live_Available" />
+                <ScalarProperty Name="Shop_Id" ColumnName="Shop_Id" />
+                <ScalarProperty Name="Shop_Name" ColumnName="Shop_Name" />
+                <ScalarProperty Name="Shop_ImageURL" ColumnName="Shop_ImageURL" />
+                <ScalarProperty Name="Available" ColumnName="Available" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CreateAccount_Public">
+            <EntityTypeMapping TypeName="IdealmallModel.CreateAccount_Public">
+              <MappingFragment StoreEntitySet="CreateAccount_Public">
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+                <ScalarProperty Name="DateInserted" ColumnName="DateInserted" />
+                <ScalarProperty Name="User_Password" ColumnName="User_Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Login_Public">
+            <EntityTypeMapping TypeName="IdealmallModel.Login_Public">
+              <MappingFragment StoreEntitySet="Login_Public">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+                <ScalarProperty Name="DateInserted" ColumnName="DateInserted" />
+                <ScalarProperty Name="User_Password" ColumnName="User_Password" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Login_Trade">
+            <EntityTypeMapping TypeName="IdealmallModel.Login_Trade">
+              <MappingFragment StoreEntitySet="Login_Trade">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+                <ScalarProperty Name="DateInserted" ColumnName="DateInserted" />
+                <ScalarProperty Name="User_Password" ColumnName="User_Password" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OfferProducts_Public">
+            <EntityTypeMapping TypeName="IdealmallModel.OfferProducts_Public">
+              <MappingFragment StoreEntitySet="OfferProducts_Public">
+                <ScalarProperty Name="Previous_Prize" ColumnName="Previous_Prize" />
+                <ScalarProperty Name="OfferProducts_Id" ColumnName="OfferProducts_Id" />
+                <ScalarProperty Name="Shop_Id" ColumnName="Shop_Id" />
+                <ScalarProperty Name="Offer_Rate" ColumnName="Offer_Rate" />
+                <ScalarProperty Name="Volume" ColumnName="Volume" />
+                <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+                <ScalarProperty Name="Product_ImageURL" ColumnName="Product_ImageURL" />
+                <ScalarProperty Name="SellAt" ColumnName="SellAt" />
+                <ScalarProperty Name="DateInserted" ColumnName="DateInserted" />
+                <ScalarProperty Name="POR" ColumnName="POR" />
+                <ScalarProperty Name="VAT" ColumnName="VAT" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Additional_Offer" ColumnName="Additional_Offer" />
+                <ScalarProperty Name="Offer_Enddate" ColumnName="Offer_Enddate" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="Additional_Info" ColumnName="Additional_Info" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OfferProducts_Trade">
+            <EntityTypeMapping TypeName="IdealmallModel.OfferProducts_Trade">
+              <MappingFragment StoreEntitySet="OfferProducts_Trade">
+                <ScalarProperty Name="OfferProducts_Id" ColumnName="OfferProducts_Id" />
+                <ScalarProperty Name="Shop_Id" ColumnName="Shop_Id" />
+                <ScalarProperty Name="Offer_Rate" ColumnName="Offer_Rate" />
+                <ScalarProperty Name="Volume" ColumnName="Volume" />
+                <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+                <ScalarProperty Name="Product_ImageURL" ColumnName="Product_ImageURL" />
+                <ScalarProperty Name="Max_Retail_Price" ColumnName="Max_Retail_Price" />
+                <ScalarProperty Name="DateInserted" ColumnName="DateInserted" />
+                <ScalarProperty Name="POR" ColumnName="POR" />
+                <ScalarProperty Name="VAT" ColumnName="VAT" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Additional_Offer" ColumnName="Additional_Offer" />
+                <ScalarProperty Name="Offer_Enddate" ColumnName="Offer_Enddate" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="Additional_Info" ColumnName="Additional_Info" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="outcodepostcodes">
+            <EntityTypeMapping TypeName="IdealmallModel.outcodepostcode">
+              <MappingFragment StoreEntitySet="outcodepostcodes">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="outcode" ColumnName="outcode" />
+                <ScalarProperty Name="lat" ColumnName="lat" />
+                <ScalarProperty Name="lng" ColumnName="lng" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Retailshops">
+            <EntityTypeMapping TypeName="IdealmallModel.Retailshop">
+              <MappingFragment StoreEntitySet="Retailshops">
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="shopping_Timing" ColumnName="shopping_Timing" />
+                <ScalarProperty Name="Services_Text" ColumnName="Services_Text" />
+                <ScalarProperty Name="Shop_Id" ColumnName="Shop_Id" />
+                <ScalarProperty Name="Shop_Name" ColumnName="Shop_Name" />
+                <ScalarProperty Name="Shop_ImageURL" ColumnName="Shop_ImageURL" />
+                <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Available" ColumnName="Available" />
+                <ScalarProperty Name="Shop_Orginal_Name" ColumnName="Shop_Orginal_Name" />
+                <ScalarProperty Name="Services" ColumnName="Services" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShoppingList_Public">
+            <EntityTypeMapping TypeName="IdealmallModel.ShoppingList_Public">
+              <MappingFragment StoreEntitySet="ShoppingList_Public">
+                <ScalarProperty Name="Shopping_Id" ColumnName="Shopping_Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Shop_Id" ColumnName="Shop_Id" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="Offer_Rate" ColumnName="Offer_Rate" />
+                <ScalarProperty Name="Volume" ColumnName="Volume" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="VAT" ColumnName="VAT" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShoppingList_Trade">
+            <EntityTypeMapping TypeName="IdealmallModel.ShoppingList_Trade">
+              <MappingFragment StoreEntitySet="ShoppingList_Trade">
+                <ScalarProperty Name="Shopping_Id" ColumnName="Shopping_Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Shop_Id" ColumnName="Shop_Id" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="Offer_Rate" ColumnName="Offer_Rate" />
+                <ScalarProperty Name="Volume" ColumnName="Volume" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="VAT" ColumnName="VAT" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SmallPostcodeTables">
+            <EntityTypeMapping TypeName="IdealmallModel.SmallPostcodeTable">
+              <MappingFragment StoreEntitySet="SmallPostcodeTable">
+                <ScalarProperty Name="postcode" ColumnName="postcode" />
+                <ScalarProperty Name="latitude" ColumnName="latitude" />
+                <ScalarProperty Name="longitude" ColumnName="longitude" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Standards">
+            <EntityTypeMapping TypeName="IdealmallModel.Standard">
+              <MappingFragment StoreEntitySet="Standards">
+                <ScalarProperty Name="StandardId" ColumnName="StandardId" />
+                <ScalarProperty Name="StandardName" ColumnName="StandardName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Students">
+            <EntityTypeMapping TypeName="IdealmallModel.Student">
+              <MappingFragment StoreEntitySet="Students">
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Standard_StandardId" ColumnName="Standard_StandardId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="IdealmallModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SmallPostcodeTable1">
+            <EntityTypeMapping TypeName="IdealmallModel.SmallPostcodeTable1">
+              <MappingFragment StoreEntitySet="SmallPostcodeTable1">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="postcode" ColumnName="postcode" />
+                <ScalarProperty Name="latitude" ColumnName="latitude" />
+                <ScalarProperty Name="longitude" ColumnName="longitude" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CreateAccount_Trade">
+            <EntityTypeMapping TypeName="IdealmallModel.CreateAccount_Trade">
+              <MappingFragment StoreEntitySet="CreateAccount_Trade">
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="BusinessName" ColumnName="BusinessName" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+                <ScalarProperty Name="DateInserted" ColumnName="DateInserted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="IdealmallModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Retailshops_bkp">
+            <EntityTypeMapping TypeName="IdealmallModel.Retailshops_bkp">
+              <MappingFragment StoreEntitySet="Retailshops_bkp">
+                <ScalarProperty Name="Shop_Id" ColumnName="Shop_Id" />
+                <ScalarProperty Name="Shop_Name" ColumnName="Shop_Name" />
+                <ScalarProperty Name="Shop_ImageURL" ColumnName="Shop_ImageURL" />
+                <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Available" ColumnName="Available" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserDetails">
+            <EntityTypeMapping TypeName="IdealmallModel.UserDetail">
+              <MappingFragment StoreEntitySet="UserDetail">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Postcodepart3">
+            <EntityTypeMapping TypeName="IdealmallModel.Postcodepart3">
+              <MappingFragment StoreEntitySet="Postcodepart3">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="postcode" ColumnName="postcode" />
+                <ScalarProperty Name="latitude" ColumnName="latitude" />
+                <ScalarProperty Name="longitude" ColumnName="longitude" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="f_sp_ImportExcel_Trade" FunctionName="IdealmallModel.Store.f_sp_ImportExcel_Trade" />
+          <EntitySetMapping Name="postcodelatlngs">
+            <EntityTypeMapping TypeName="IdealmallModel.postcodelatlng">
+              <MappingFragment StoreEntitySet="postcodelatlng">
+                <ScalarProperty Name="longitude" ColumnName="longitude" />
+                <ScalarProperty Name="latitude" ColumnName="latitude" />
+                <ScalarProperty Name="postcode" ColumnName="postcode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
